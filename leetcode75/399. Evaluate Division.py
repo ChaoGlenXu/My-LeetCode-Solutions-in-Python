@@ -5,7 +5,7 @@
 class Solution:
     def calcEquation(self, equations: List[List[str]], values: List[float], queries: List[List[str]]) -> List[float]:
         adj = defaultdict(dict)
-        #self.visited = set() this gobal way can cause infinite loop in this case, so this should be a variable pass in dfs 
+        #self.visited = set() this gobal way can cause infinite loop in this case, so this should be a variable passed into dfs 
         for idx, eq in enumerate(equations):
             a, b = eq 
             adj[a][b] = values[idx]
