@@ -8,9 +8,8 @@ class Solution:
             if sum == n and count == k:
                 res.append(path) 
                 return
-            for each in range(ith, n+1):
-                if each > 9 or sum + each > n or each+1 >= n+1 or count >= k: break
-                #print(each)
+            for each in range(ith, 10):
+                if  sum + each > n  or count >= k: break
                 backtrack(each + 1, sum + each, count + 1 , path + [each])
         
         res = []
