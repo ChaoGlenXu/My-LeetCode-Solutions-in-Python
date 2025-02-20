@@ -10,9 +10,9 @@ class Solution:
             new_row = [1] * n
 
             for x in range(n-2, -1, -1):
-                print("x is " + str(x) + " y is: " + str(y))
+                #print("x is " + str(x) + " y is: " + str(y))
                 new_row[x] = new_row[x+1] + row[x]
-                print(new_row[x])
+                #print(new_row[x])
             row = new_row
             
         return row[0]
