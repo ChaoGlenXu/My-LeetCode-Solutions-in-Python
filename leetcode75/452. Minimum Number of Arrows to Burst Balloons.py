@@ -13,8 +13,10 @@ class Solution:
                 pre[1] = end
             else:
                 res -= 1
-                pre[0] = max(pre[0], start)
-                pre[1] = min(pre[1], end)
+                pre = [start, min(pre[1], end)] #Runtime 165ms Beats 26.95% Memory 51.50MB Beats 34.77%
+                #Runtime 196ms Beats 14.73% Memory 51.38MB Beats 77.05%
+                #pre[0] = max(pre[0], start)  
+                #pre[1] = min(pre[1], end)
         
         return res
 
