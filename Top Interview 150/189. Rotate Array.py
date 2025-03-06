@@ -8,8 +8,18 @@ class Solution:
         Do not return anything, modify nums in-place instead.
         """
         
+        #more concise code for in-place with O(1) extra space
+        def swap(l, r):
+            while l < r: nums[l], nums[r] ,l ,r = nums[r], nums[l] ,l+1 ,r-1 
+
+        k = k%len(nums)
+        swap(0, len(nums)-1)
+        swap(0,k-1)
+        swap(k, len(nums)-1)
+        
+        '''
         # Runtime 11ms Beats 24.08% Memory 25.66MB Beats 46.48%
-        # in place with O(1) extra space 
+        # in-place with O(1) extra space 
         k ,l ,r = k % len(nums), 0 , len(nums)-1
         while l < r:
             nums[l], nums[r] = nums[r], nums[l]
@@ -24,6 +34,7 @@ class Solution:
         while l < r:
             nums[l], nums[r] = nums[r], nums[l]
             l, r = l+1, r-1
+        '''
         
         #Runtime 1022ms Beats 6.74% Memory 25.47MB Beats 92.23%
         #first way passed all test cases, but not in place
