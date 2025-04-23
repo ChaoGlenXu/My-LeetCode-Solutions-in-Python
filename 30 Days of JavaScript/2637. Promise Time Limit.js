@@ -11,10 +11,11 @@ var timeLimit = function(fn, t) {
     
     return async function(...args) {
         return new Promise((res, rej) => {
-            setTimeout(() => rej("Time Limit Exceeded"), t);
+            const id = setTimeout(() => rej("Time Limit Exceeded"), t);
             fn(...args)
                 .then((fn_output) => res(fn_output))
-                .catch((err) => rej(err));
+                .catch((err) => rej(err))
+                .finally(() => clearTimeout(id));
         });
     }
 };
