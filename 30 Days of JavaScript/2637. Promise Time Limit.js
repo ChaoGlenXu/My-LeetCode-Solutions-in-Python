@@ -1,5 +1,5 @@
 //2637. Promise Time Limit
-//Easy
+//Medium
 //problem statement:   https://leetcode.com/problems/promise-time-limit/description/?envType=study-plan-v2&envId=30-days-of-javascript
 
 /**
